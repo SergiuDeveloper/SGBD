@@ -1,7 +1,4 @@
-import oracle.sql.STRUCT;
-
 import java.sql.*;
-import java.util.Map;
 
 public class Utilizator {
     public int ID;

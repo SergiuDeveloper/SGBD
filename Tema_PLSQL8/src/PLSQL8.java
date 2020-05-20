@@ -15,7 +15,7 @@ public class PLSQL8 {
         switch (consoleScanner.nextInt()) {
             case 1: DBManager.exportData(); break;
             case 2: DBManager.importData().forEach(System.out::println); break;
-            default: break;
+            default: System.out.println("Invalid option"); break;
         }
     }
 }

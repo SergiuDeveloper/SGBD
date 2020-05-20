@@ -91,9 +91,9 @@ public class FriendSuggestion {
 
     @Override
     public String toString() {
-        return "FriendSuggestion{" +
-                "appearances=" + appearances +
-                ", student=" + student +
-                '}';
+        return "\t\t{\n" +
+                "\t\t\t\"appearances\": " + appearances + ",\n" +
+                "\t\t\t\"student\": " + student + "\n" +
+                "\t\t}";
     }
 }

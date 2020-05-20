@@ -31,10 +31,10 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
+        return "{\n" +
+                "\t\t\t\t\"id\": " + id + ",\n" +
+                "\t\t\t\t\"firstName\": \"" + firstName + "\",\n" +
+                "\t\t\t\t\"lastName\": \"" + lastName + "\"\n" +
+                "\t\t\t}";
     }
 }

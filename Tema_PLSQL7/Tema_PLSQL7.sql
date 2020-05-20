@@ -10,12 +10,12 @@ CREATE TABLE Grades_Log(
     Grade_ID            NUMBER NOT NULL,
     Old_Grade_Value     NUMBER NULL,
     New_Grade_Value     NUMBER NULL,
-    Operation_Type   VARCHAR2(32) NOT NULL,
+    Operation_Type      VARCHAR2(32) NOT NULL,
     Execution_Date      DATE NOT NULL,
     Operation_User      VARCHAR2(64) NOT NULL
 );
 /
-CREATE OR REPLACE TRIGGER t_Grades_Insert_After AFTER INSERT OR UPDATE OR DELETE ON Note
+CREATE OR REPLACE TRIGGER t_Grades_After AFTER INSERT OR UPDATE OR DELETE ON Note
 FOR EACH ROW
 DECLARE
     current_operation_type   Grades_Log.Operation_Type%TYPE;

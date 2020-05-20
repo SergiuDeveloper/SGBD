@@ -15,11 +15,16 @@ public class FriendSuggestions {
 
         List<FriendSuggestion> friendSuggestions = FriendSuggestion.get(studentID, numberOfCommonFriendsRequired);
         int numberOfSuggestions = maximumNumberOfSuggestions;
-        for (var friendSuggestion : friendSuggestions)
+        System.out.println("{\n\t\"FriendSuggestions\": [");
+        for (int friendSuggestionIterator = 0; friendSuggestionIterator < friendSuggestions.size(); ++friendSuggestionIterator)
             if (numberOfSuggestions > 0) {
                 --numberOfSuggestions;
 
-                System.out.println(friendSuggestion);
+                System.out.print(friendSuggestions.get(friendSuggestionIterator));
+                if (friendSuggestionIterator < friendSuggestions.size() - 1)
+                    System.out.print(",");
+                System.out.println();
             }
+        System.out.println("\t]\n}");
     }
 }

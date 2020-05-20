@@ -7,16 +7,14 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "STUDENT", "STUDENT");
 
-        /* Incercam sa incalcam constraint-ul de nota unica */
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement("INSERT INTO Note(id, id_student, id_curs, valoare) VALUES(10000, 23, 4, 6)");
+            statement = connection.prepareStatement("INSERT INTO Cursuri VALUES (NULL, NULL, NULL, NULL, NULL, NULL, NULL)");
             statement.execute();
-            statement = connection.prepareStatement("INSERT INTO Note(id, id_student, id_curs, valoare) VALUES(10000, 23, 4, 9)");
-            statement.execute();
+            System.out.println("Curs adaugat!");
         }
         catch (Exception exception) {
-            System.out.println("Exceptie! Constraint nota unica!");
+            System.out.println(exception.getMessage());
         }
 
         if (statement != null)
